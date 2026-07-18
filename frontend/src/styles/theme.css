@@ -1,0 +1,18 @@
+@theme {
+
+  --color-background: #FCFAF8;
+  --color-surface: #FFFFFF;
+
+  --color-primary: #CFA7B5;
+  --color-primary-hover: #B98A9A;
+
+  --color-text: #2E2E2E;
+  --color-muted: #6F6F6F;
+
+  --color-border: #ECE5E8;
+
+  --radius-card: 24px;
+
+  --shadow-soft: 0 12px 30px rgba(0,0,0,.06);
+
+}
