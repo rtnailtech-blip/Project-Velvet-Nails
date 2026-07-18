@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 import {
   LayoutDashboard,
   Sparkles,
@@ -22,20 +24,46 @@ function Sidebar() {
 
       {/* Navigation */}
       <nav className="space-y-2">
-        <SidebarItem icon={<LayoutDashboard size={20} />} text="Dashboard" />
-        <SidebarItem icon={<Sparkles size={20} />} text="Consultation" />
-        <SidebarItem icon={<Users size={20} />} text="Clients" />
-        <SidebarItem icon={<Images size={20} />} text="Gallery" />
-        <SidebarItem icon={<Settings size={20} />} text="Settings" />
+        <SidebarItem
+            to="/"
+            icon={<LayoutDashboard size={20} />}
+            text="Dashboard"
+        />
+
+        <SidebarItem
+            to="/consultation"
+            icon={<Sparkles size={20} />}
+            text="Consultation"
+        />
+
+        <SidebarItem
+            to="/clients"
+            icon={<Users size={20} />}
+            text="Clients"
+        />
+
+        <SidebarItem
+            to="/gallery"
+            icon={<Images size={20} />}
+            text="Gallery"
+        />
+
+        <SidebarItem
+            to="/settings"
+            icon={<Settings size={20} />}
+            text="Settings"
+        />
       </nav>
     </aside>
   );
 }
 
-function SidebarItem({ icon, text }) {
+function SidebarItem({ icon, text, to }) {
   return (
-    <button
-      className="
+    <NavLink
+      to={to}
+      className={({ isActive }) =>
+        `
         flex
         w-full
         items-center
@@ -43,19 +71,20 @@ function SidebarItem({ icon, text }) {
         rounded-xl
         px-4
         py-3
-        text-[#4A4A4A]
         transition-all
         duration-200
-        hover:bg-white
-        hover:shadow-sm
-      "
+        ${
+          isActive
+            ? "bg-white shadow-sm text-[#2E2E2E] font-semibold"
+            : "text-[#4A4A4A] hover:bg-white hover:shadow-sm"
+        }
+        `
+      }
     >
       {icon}
 
-      <span className="font-medium">
-        {text}
-      </span>
-    </button>
+      <span>{text}</span>
+    </NavLink>
   );
 }
 
