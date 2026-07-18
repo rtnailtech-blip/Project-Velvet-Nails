@@ -1,4 +1,7 @@
 @theme {
+  /* =========================
+     COLORS
+  ========================= */
 
   --color-background: #FCFAF8;
   --color-surface: #FFFFFF;
@@ -11,8 +14,42 @@
 
   --color-border: #ECE5E8;
 
-  --radius-card: 24px;
+  --color-success: #16A34A;
+  --color-warning: #D97706;
+  --color-danger: #DC2626;
+  --color-info: #2563EB;
 
-  --shadow-soft: 0 12px 30px rgba(0,0,0,.06);
+  /* =========================
+     BORDER RADIUS
+  ========================= */
 
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  /* =========================
+     SHADOWS
+  ========================= */
+
+  --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.06);
+  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-modal: 0 20px 40px rgba(0, 0, 0, 0.15);
+
+  /* =========================
+     SPACING
+  ========================= */
+
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  /* =========================
+     TRANSITIONS
+  ========================= */
+
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
 }
