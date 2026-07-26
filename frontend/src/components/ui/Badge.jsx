@@ -5,21 +5,16 @@ function Badge({
   ...props
 }) {
   const variants = {
-    primary:
-      "bg-[var(--color-primary)]/15 text-[var(--color-primary)]",
+  primary: "bg-[var(--color-primary)]/15 text-[var(--color-primary)]",
 
-    success:
-      "bg-[var(--color-success)]/15 text-[var(--color-success)]",
+  success: "bg-green-100 text-green-700",
 
-    warning:
-      "bg-[var(--color-warning)]/15 text-[var(--color-warning)]",
+  warning: "bg-yellow-100 text-yellow-700",
 
-    danger:
-      "bg-[var(--color-danger)]/15 text-[var(--color-danger)]",
+  danger: "bg-red-100 text-red-700",
 
-    neutral:
-      "bg-gray-100 text-[var(--color-muted)]",
-  };
+  neutral: "bg-gray-100 text-[var(--color-muted)]",
+};
 
   return (
     <span
