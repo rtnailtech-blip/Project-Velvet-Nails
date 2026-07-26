@@ -7,6 +7,8 @@ function OptionGroup({
   onChange,
   options,
   columns = 3,
+  error = false,
+  helperText = "",
 }) {
   return (
     <div>
@@ -37,6 +39,18 @@ function OptionGroup({
           />
         ))}
       </div>
+
+      {helperText && (
+        <p
+          className={`mt-3 text-sm ${
+            error
+              ? "text-[var(--color-danger)]"
+              : "text-[var(--color-muted)]"
+          }`}
+        >
+          {helperText}
+        </p>
+      )}
     </div>
   );
 }

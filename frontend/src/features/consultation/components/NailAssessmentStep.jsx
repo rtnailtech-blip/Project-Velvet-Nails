@@ -143,6 +143,7 @@ const concernOptions = [
 function NailAssessmentStep({
   data,
   updateData,
+  errors = {},
 }) {
   return (
     <Card className="p-10">
@@ -172,6 +173,8 @@ function NailAssessmentStep({
           }
           options={nailLengthOptions}
           columns={4}
+          error={!!errors.nailLength}
+          helperText={errors.nailLength}
         />
 
         <OptionGroup
@@ -182,6 +185,8 @@ function NailAssessmentStep({
             updateData("nailShape", value)
           }
           options={nailShapeOptions}
+          error={!!errors.nailShape}
+          helperText={errors.nailShape}
         />
 
         <OptionGroup
@@ -192,6 +197,8 @@ function NailAssessmentStep({
             updateData("nailStrength", value)
           }
           options={strengthOptions}
+          error={!!errors.nailStrength}
+          helperText={errors.nailStrength}
         />
 
         <OptionGroup
@@ -203,6 +210,8 @@ function NailAssessmentStep({
           }
           options={cuticleOptions}
           columns={4}
+          error={!!errors.cuticleCondition}
+          helperText={errors.cuticleCondition}
         />
 
         <CheckboxGroup
@@ -212,6 +221,8 @@ function NailAssessmentStep({
             updateData("concerns", values)
           }
           options={concernOptions}
+          error={!!errors.concerns}
+          helperText={errors.concerns}
         />
 
         <TextArea

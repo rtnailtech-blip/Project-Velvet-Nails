@@ -4,6 +4,8 @@ function CheckboxGroup({
   values,
   onChange,
   columns = 3,
+  error = false,
+  helperText = "",
 }) {
   const toggleValue = (value) => {
     if (values.includes(value)) {
@@ -64,6 +66,18 @@ function CheckboxGroup({
           );
         })}
       </div>
+
+      {helperText && (
+        <p
+          className={`mt-3 text-sm ${
+            error
+              ? "text-[var(--color-danger)]"
+              : "text-[var(--color-muted)]"
+          }`}
+        >
+          {helperText}
+        </p>
+      )}
     </div>
   );
 }

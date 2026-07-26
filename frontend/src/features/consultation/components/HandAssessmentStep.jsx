@@ -112,6 +112,7 @@ const handConditionOptions = [
 function HandAssessmentStep({
   data,
   updateData,
+  errors = {},
 }) {
   return (
     <Card className="p-10">
@@ -141,6 +142,8 @@ function HandAssessmentStep({
             updateData("handSize", value)
           }
           options={handSizeOptions}
+          error={!!errors.handSize}
+          helperText={errors.handSize}
         />
 
         <OptionGroup
@@ -151,6 +154,8 @@ function HandAssessmentStep({
             updateData("fingerLength", value)
           }
           options={fingerLengthOptions}
+          error={!!errors.fingerLength}
+          helperText={errors.fingerLength}
         />
 
         <OptionGroup
@@ -162,6 +167,8 @@ function HandAssessmentStep({
           }
           options={skinToneOptions}
           columns={5}
+          error={!!errors.skinTone}
+          helperText={errors.skinTone}
         />
 
         <OptionGroup
@@ -172,6 +179,8 @@ function HandAssessmentStep({
             updateData("undertone", value)
           }
           options={undertoneOptions}
+          error={!!errors.undertone}
+          helperText={errors.undertone}
         />
 
         <OptionGroup
@@ -183,6 +192,8 @@ function HandAssessmentStep({
           }
           options={handConditionOptions}
           columns={4}
+          error={!!errors.handCondition}
+          helperText={errors.handCondition}
         />
 
         <TextArea
