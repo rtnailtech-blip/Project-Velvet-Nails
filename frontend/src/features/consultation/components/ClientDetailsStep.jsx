@@ -8,6 +8,7 @@ import {
 function ClientDetailsStep({
   data,
   updateData,
+  errors = {},
 }) {
   return (
     <Card className="p-10">
@@ -28,11 +29,14 @@ function ClientDetailsStep({
       </div>
 
       <div className="mt-10 grid grid-cols-2 gap-6">
+
         <Input
           label="Full Name"
           placeholder="Enter client's full name"
           value={data.fullName}
           onChange={(e) => updateData("fullName", e.target.value)}
+          error={!!errors.fullName}
+          helperText={errors.fullName}
         />
 
         <Input
@@ -40,21 +44,24 @@ function ClientDetailsStep({
           placeholder="+91 XXXXX XXXXX"
           value={data.phone}
           onChange={(e) => updateData("phone", e.target.value)}
+          error={!!errors.phone}
+          helperText={errors.phone}
         />
 
         <Input
-          label="Email Address"
+          label="Email Address (Optional)"
           placeholder="example@email.com"
           value={data.email}
           onChange={(e) => updateData("email", e.target.value)}
         />
 
         <Input
-          label="Date of Birth"
+          label="Date of Birth (Optional)"
           type="date"
           value={data.dateOfBirth}
           onChange={(e) => updateData("dateOfBirth", e.target.value)}
         />
+
       </div>
 
       <div className="mt-8">
@@ -63,6 +70,7 @@ function ClientDetailsStep({
         </label>
 
         <div className="grid grid-cols-2 gap-5">
+
           <RadioCard
             name="clientType"
             value="new"
@@ -80,12 +88,19 @@ function ClientDetailsStep({
             title="Existing Client"
             description="Returning client with previous visit history."
           />
+
         </div>
+
+        {errors.clientType && (
+          <p className="mt-3 text-sm text-[var(--color-danger)]">
+            {errors.clientType}
+          </p>
+        )}
       </div>
 
       <div className="mt-8">
         <TextArea
-          label="Consultation Notes"
+          label="Consultation Notes (Optional)"
           placeholder="Any additional notes before beginning the consultation..."
           rows={5}
           value={data.notes}

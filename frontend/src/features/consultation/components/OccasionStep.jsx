@@ -31,7 +31,7 @@ const occasionOptions = [
     title: "Vacation",
     description: "Holiday nails.",
   },
-    {
+  {
     value: "festival",
     title: "Festival",
     description: "Seasonal celebrations.",
@@ -143,6 +143,7 @@ const artLevelOptions = [
 function OccasionStep({
   data,
   updateData,
+  errors = {},
 }) {
   return (
     <Card className="p-10">
@@ -166,22 +167,32 @@ function OccasionStep({
           label="Occasion"
           name="occasion"
           value={data.occasion}
-          onChange={(value) => updateData("occasion", value)}
+          onChange={(value) =>
+            updateData("occasion", value)
+          }
           options={occasionOptions}
+          error={!!errors.occasion}
+          helperText={errors.occasion}
         />
 
         <OptionGroup
           label="Style Preference"
           name="style"
           value={data.style}
-          onChange={(value) => updateData("style", value)}
+          onChange={(value) =>
+            updateData("style", value)
+          }
           options={styleOptions}
+          error={!!errors.style}
+          helperText={errors.style}
         />
 
         <CheckboxGroup
           label="Favourite Colour Families"
           values={data.colours}
-          onChange={(values) => updateData("colours", values)}
+          onChange={(values) =>
+            updateData("colours", values)
+          }
           options={colourOptions}
         />
 
@@ -189,24 +200,34 @@ function OccasionStep({
           label="Preferred Finish"
           name="finish"
           value={data.finish}
-          onChange={(value) => updateData("finish", value)}
+          onChange={(value) =>
+            updateData("finish", value)
+          }
           options={finishOptions}
+          error={!!errors.finish}
+          helperText={errors.finish}
         />
 
         <OptionGroup
           label="Nail Art Level"
           name="artLevel"
           value={data.artLevel}
-          onChange={(value) => updateData("artLevel", value)}
+          onChange={(value) =>
+            updateData("artLevel", value)
+          }
           options={artLevelOptions}
           columns={4}
+          error={!!errors.artLevel}
+          helperText={errors.artLevel}
         />
 
         <TextArea
           label="Inspiration"
           rows={4}
           value={data.notes || ""}
-          onChange={(e) => updateData("notes", e.target.value)}
+          onChange={(e) =>
+            updateData("notes", e.target.value)
+          }
           placeholder="Pinterest links, Instagram references, favourite designs..."
         />
 

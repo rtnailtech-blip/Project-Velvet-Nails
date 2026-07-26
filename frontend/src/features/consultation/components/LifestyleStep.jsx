@@ -133,6 +133,7 @@ const previousServiceOptions = [
 function LifestyleStep({
   data,
   updateData,
+  errors = {},
 }) {
   return (
     <Card className="p-10">
@@ -162,6 +163,8 @@ function LifestyleStep({
             updateData("occupation", value)
           }
           options={occupationOptions}
+          error={!!errors.occupation}
+          helperText={errors.occupation}
         />
 
         <OptionGroup
@@ -172,6 +175,8 @@ function LifestyleStep({
             updateData("handUsage", value)
           }
           options={handUsageOptions}
+          error={!!errors.handUsage}
+          helperText={errors.handUsage}
         />
 
         <OptionGroup
@@ -183,6 +188,8 @@ function LifestyleStep({
           }
           options={maintenanceOptions}
           columns={4}
+          error={!!errors.maintenance}
+          helperText={errors.maintenance}
         />
 
         <OptionGroup
@@ -193,6 +200,8 @@ function LifestyleStep({
             updateData("preferredLength", value)
           }
           options={preferredLengthOptions}
+          error={!!errors.preferredLength}
+          helperText={errors.preferredLength}
         />
 
         <CheckboxGroup
