@@ -1,13 +1,22 @@
+import DashboardHero from "./DashboardHero";
+import StatsGrid from "./StatsGrid";
+import UpcomingAppointments from "./UpcomingAppointments";
+import QuickActions from "./QuickActions";
+import RecentActivity from "./RecentActivity";
+
 function DashboardPage() {
   return (
-    <div className="rounded-3xl border border-[#ECE5E8] bg-white p-10 shadow-sm">
-      <h1 className="font-['Playfair_Display'] text-4xl font-semibold text-[#2D2D2D]">
-        Welcome to Velvet Nails
-      </h1>
+    <div className="space-y-8">
+      <DashboardHero />
 
-      <p className="mt-4 max-w-2xl text-[#6F6F6F]">
-        Your luxury nail consultation assistant is ready.
-      </p>
+      <StatsGrid />
+
+      <div className="grid gap-8 lg:grid-cols-2">
+        <UpcomingAppointments />
+        <QuickActions />
+      </div>
+
+      <RecentActivity />
     </div>
   );
 }

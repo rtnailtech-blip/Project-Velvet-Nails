@@ -1,0 +1,32 @@
+.heading-xl {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.heading-lg {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.heading-md {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.body {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-muted);
+}

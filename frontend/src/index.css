@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "./styles/theme.css";
+@import "./styles/typography.css";
 
 html,
 body,
@@ -8,6 +9,21 @@ body,
 }
 
 body {
+  margin: 0;
   font-family: "Inter", sans-serif;
-  background: #FCFAF8;
+  background: var(--color-background);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
 }
